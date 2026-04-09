@@ -3,14 +3,14 @@
     "name": "music-album",
     "builds": [
         {
-            "src": "App.tsx",
+            "src": "server.js",
             "use": "@vercel/node"
         }
     ],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "/App.tsx"
+            "dest": "/server.js"
         }
     ]
 }

@@ -38,11 +38,12 @@ app.use("/api/transactions", transactionRoutes);
 app.use("/api/restaurant-owners", restaurantOwnerRoutes);
 app.use("/api/users", userRoutes);
 //Deployement
-// if (process.env.NODE_ENV === "production") {
-app.use(express.static(path.join(__dirname, "dist")));
-app.use((req, res) => {
-  res.sendFile(path.join(__dirname, "dist", "index.html"));
-});
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "dist")));
+  app.use((req, res) => {
+    res.sendFile(path.join(__dirname, "dist", "index.html"));
+  });
+}
 
 // MongoDB Connection
 const MONGODB_URI =
